@@ -1,6 +1,7 @@
 from colorama import init, Fore, Back, Style
 import os   # Operating System
 import json
+import datetime
 
 # Start Colorama
 init(autoreset=True)
@@ -33,3 +34,20 @@ with open(MOOD_FILE, 'w', encoding='utf-8') as file:
 
 # Get user input for mood
 mood = input("How are you feeling? (happy, sad, angry, calm, anxius): ").strip().lower()
+
+# Save the moods datebydate
+if mood in moods:
+    if "history" not in data:
+        data["history"] = []
+
+        now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        entry = {"datetime": now, "mood": mood}
+        data["history"].append(entry)
+
+    with open(MOOD_FILE, 'w', encoding='utf-8') as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
+    
+    bg, fg = moods[mood]
+    print(bg + fg + f"Logged mood '{mood}' at {now}")
+else:
+    print("Invalid mood entered.")
