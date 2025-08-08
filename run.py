@@ -48,7 +48,7 @@ add_note = input(
 if add_note == "yes":
     note_text = input(Fore.LIGHTWHITE_EX + "Enter your note: ").strip()
 else:
-     # If user does not want to add a note, assign an empty string
+    # If user does not want to add a note, assign an empty string
     note_text = ""  # Alternatively, could be None or skip adding to entry
 
 # Get the current date and time formatted as a string
@@ -89,3 +89,28 @@ else:
     # Print an error message in red if the entered mood is invalid
     print(Fore.RED + "Invalid mood entered." + Style.RESET_ALL)
 
+# After completing mood and note recording
+# Ask the user if they want to view the mood history data
+show_history = input(
+    Fore.MAGENTA + "Would you like to see the mood history data? "
+    "(yes/no): "
+    ).strip().lower()
+
+# If the user agrees, iterate through the history list and display each entry with colors
+# Showing date, mood, and note if available
+if show_history == "yes":
+    # Display the mood history list
+    for entry in data.get("history", []):
+        dt = entry.get("datetime", "Unknown date")
+        m = entry.get("mood", "Unknown mood")
+        note = entry.get("note", "")
+        bg, fg = moods.get(m, (Back.RESET, Fore.RESET))
+        print(bg + fg + f"{dt} - Mood: {m}" + Style.RESET_ALL)
+        if note:
+            print(Fore.LIGHTWHITE_EX + f"  Note: {note}" + Style.RESET_ALL)
+elif show_history == "no":
+    # If the user declines, print a confirmation message
+    print(Fore.CYAN + "Okay, not showing mood history." + Style.RESET_ALL)
+else:
+    # If the input is invalid, show an error message in red
+    print(Fore.RED + "Invalid input. Please enter yes or no." + Style.RESET_ALL)
