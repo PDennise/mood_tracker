@@ -31,3 +31,5 @@ with open(MOOD_FILE, 'r', encoding='utf-8') as file:
 with open(MOOD_FILE, 'w', encoding='utf-8') as file:
     json.dump(data, file, ensure_ascii=False, indent=4)
 
+# Get user input for mood
+mood = input("How are you feeling? (happy, sad, angry, calm, anxius): ").strip().lower()
