@@ -33,21 +33,31 @@ with open(MOOD_FILE, 'w', encoding='utf-8') as file:
     json.dump(data, file, ensure_ascii=False, indent=4)
 
 # Get user input for mood
-mood = input("How are you feeling? (happy, sad, angry, calm, anxius): ").strip().lower()
+mood = input(Fore.CYAN + "How are you feeling? (happy, sad, angry, calm, anxius): ").strip().lower()
 
-# Save the moods datebydate
+# Check if the entered mood is in the predefined moods dictionary
 if mood in moods:
+    # If there is no "history" key in the data, initialize it as an empty list
     if "history" not in data:
         data["history"] = []
 
-        now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        entry = {"datetime": now, "mood": mood}
-        data["history"].append(entry)
+    # Get the current date and time in the format YYYY-MM-DD HH:MM:SS
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    # Create a new entry containing the timestamp and the entered mood
+    entry = {"datetime": now, "mood": mood}
 
+    # Append the new entry to the mood history list
+    data["history"].append(entry)
+
+    # Save the updated data back to the JSON file with UTF-8 encoding
     with open(MOOD_FILE, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
-    
+
+    # Retrieve background and foreground colors for the mood
     bg, fg = moods[mood]
-    print(bg + fg + f"Logged mood '{mood}' at {now}")
+    # Print a confirmation message with the appropriate colors, then reset style
+    print(bg + fg + f"Logged mood '{mood}' at {now}" + Style.RESET_ALL)
 else:
-    print("Invalid mood entered.")
+    # Print an error message in red if the entered mood is invalid
+    print(Fore.RED + "Invalid mood entered." + Style.RESET_ALL)
