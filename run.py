@@ -16,7 +16,13 @@ moods = {
 # Filename of the JSON file used to read and write mood data
 MOOD_FILE = 'mood-history.json'
 
-# Reading the file
-# 'r' is for reading the file, encoding is for special caracters on json file
+# To read the file
+# 'r' is for reading the file, encoding is for special characters on json file
 with open('mood-history.json', 'r', encoding='utf-8') as file:
     data = json.load(file)
+
+# To write to the file
+# 'r' is for writing on the json file,
+# ensure_ascii= is for using ascii characters on json file
+with open('mood-history.json', 'w', encoding='utf-8') as file:
+    json.dump(data, file, ensure_ascii=False, indent=4)
