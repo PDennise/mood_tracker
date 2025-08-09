@@ -96,7 +96,8 @@ show_history = input(
     "(yes/no): "
     ).strip().lower()
 
-# If the user agrees, iterate through the history list and display each entry with colors
+# If the user agrees, iterate through the history list and
+# display each entry with colors
 # Showing date, mood, and note if available
 if show_history == "yes":
     # Display the mood history list
@@ -113,4 +114,27 @@ elif show_history == "no":
     print(Fore.CYAN + "Okay, not showing mood history." + Style.RESET_ALL)
 else:
     # If the input is invalid, show an error message in red
-    print(Fore.RED + "Invalid input. Please enter yes or no." + Style.RESET_ALL)
+    print(
+        Fore.RED + "Invalid input. Please enter yes or no."
+        + Style.RESET_ALL
+        )
+
+
+# Prompt the user to confirm if they want to exit the program
+exit_program = input(
+    Fore.MAGENTA + "Would you like to exit the program? (yes/no): "
+    ).strip().lower()
+
+if exit_program == "yes":
+    # If yes, print a goodbye message in green and terminate the program
+    print(Fore.GREEN + "Goodbye! Have a nice day!" + Style.RESET_ALL)
+    exit()
+elif exit_program == "no":
+    # If no, inform the user that the program will continue
+    print(Fore.CYAN + "Continuing the program..." + Style.RESET_ALL)
+else:
+    # If input is invalid, display an error message in red
+    print(
+        Fore.RED + "Invalid input. Please enter yes or no."
+        + Style.RESET_ALL
+        )
