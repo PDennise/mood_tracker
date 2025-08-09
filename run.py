@@ -81,11 +81,9 @@ entry = {"datetime": now, "mood": mood}
 if note_text:
     entry["note"] = note_text
 
-# Check if the entered mood is in the predefined moods dictionary
-if mood in moods:
-    # If there is no "history" key in the data, initialize it as an empty list
-    if "history" not in data:
-        data["history"] = []
+# If there is no "history" key in the data, initialize it as an empty list
+if "history" not in data:
+    data["history"] = []
 
     # Get the current date and time in the format YYYY-MM-DD HH:MM:SS
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -93,8 +91,8 @@ if mood in moods:
     # Create a new entry containing the timestamp and the entered mood
     entry = {"datetime": now, "mood": mood, "note": note_text}
 
-    # Append the new entry to the mood history list
-    data["history"].append(entry)
+# Append the new entry to the mood history list
+data["history"].append(entry)
 
     # Save the updated data back to the JSON file with UTF-8 encoding
     with open(MOOD_FILE, 'w', encoding='utf-8') as file:
