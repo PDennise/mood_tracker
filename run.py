@@ -85,18 +85,21 @@ if note_text:
 if "history" not in data:
     data["history"] = []
 
-    # Get the current date and time in the format YYYY-MM-DD HH:MM:SS
-    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+# Get the current date and time in the format YYYY-MM-DD HH:MM:SS
+now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    # Create a new entry containing the timestamp and the entered mood
-    entry = {"datetime": now, "mood": mood, "note": note_text}
+# Create a new entry containing the timestamp and the entered mood
+entry = {"datetime": now, "mood": mood, "note": note_text}
 
 # Append the new entry to the mood history list
 data["history"].append(entry)
 
-    # Save the updated data back to the JSON file with UTF-8 encoding
+# Save the updated data back to the JSON file with UTF-8 encoding
+try:
     with open(MOOD_FILE, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
+except OSError as e:
+    print(Fore.RED + f"Error saving mood data: {e}" + Style.RESET_ALL)
 
     # Retrieve background and foreground colors for the mood
     bg, fg = moods[mood]
