@@ -101,14 +101,11 @@ try:
 except OSError as e:
     print(Fore.RED + f"Error saving mood data: {e}" + Style.RESET_ALL)
 
-    # Retrieve background and foreground colors for the mood
-    bg, fg = moods[mood]
-    # Print a confirmation message with the appropriate colors,
-    # then reset style
-    print(bg + fg + f"Logged mood '{mood}' at {now}" + Style.RESET_ALL)
-else:
-    # Print an error message in red if the entered mood is invalid
-    print(Fore.RED + "Invalid mood entered." + Style.RESET_ALL)
+# Retrieve background and foreground colors for the mood
+bg, fg = moods[mood]
+# Print a confirmation message with the appropriate colors,
+# then reset style
+print(bg + fg + f"Logged mood '{mood}' at {now}" + Style.RESET_ALL)
 
 # After completing mood and note recording
 # Ask the user if they want to view the mood history data
@@ -130,16 +127,9 @@ if show_history == "yes":
         print(bg + fg + f"{dt} - Mood: {m}" + Style.RESET_ALL)
         if note:
             print(Fore.LIGHTWHITE_EX + f"  Note: {note}" + Style.RESET_ALL)
-elif show_history == "no":
+elif show_history != "no":
     # If the user declines, print a confirmation message
-    print(Fore.CYAN + "Okay, not showing mood history." + Style.RESET_ALL)
-else:
-    # If the input is invalid, show an error message in red
-    print(
-        Fore.RED + "Invalid input. Please enter yes or no."
-        + Style.RESET_ALL
-        )
-
+    raise ValueError("Invalid input for history option. Expected 'yes' or 'no'.")
 
 # Prompt the user to confirm if they want to exit the program
 exit_program = input(
