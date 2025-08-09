@@ -55,7 +55,7 @@ while True:
         ).strip().lower()
     if mood in moods:
         break
-    else: 
+    else:
         print(Fore.RED + "Invalid mood. Please try again." + Style.RESET_ALL)
 
 # Prompt the user if they want to add a note, input shown in yellow text
@@ -129,7 +129,9 @@ if show_history == "yes":
             print(Fore.LIGHTWHITE_EX + f"  Note: {note}" + Style.RESET_ALL)
 elif show_history != "no":
     # If the user declines, print a confirmation message
-    raise ValueError("Invalid input for history option. Expected 'yes' or 'no'.")
+    raise ValueError(
+        "Invalid input for history option. Expected 'yes' or 'no'."
+        )
 
 # Prompt the user to confirm if they want to exit the program
 exit_program = input(
@@ -140,12 +142,7 @@ if exit_program == "yes":
     # If yes, print a goodbye message in green and terminate the program
     print(Fore.GREEN + "Goodbye! Have a nice day!" + Style.RESET_ALL)
     exit()
-elif exit_program == "no":
-    # If no, inform the user that the program will continue
-    print(Fore.CYAN + "Continuing the program..." + Style.RESET_ALL)
+elif exit_program != "no":
+    raise ValueError("Invalid input for exit option. Expected 'yes' or 'no'.")
 else:
-    # If input is invalid, display an error message in red
-    print(
-        Fore.RED + "Invalid input. Please enter yes or no."
-        + Style.RESET_ALL
-        )
+    print(Fore.CYAN + "Continuing the program..." + Style.RESET_ALL)
