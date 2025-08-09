@@ -23,8 +23,22 @@ if not os.path.exists(MOOD_FILE):
 
 # To read the file
 # 'r' is for reading the file, encoding is for special characters on json file
-with open(MOOD_FILE, 'r', encoding='utf-8') as file:
-    data = json.load(file)
+# Read mood history from file with error handling
+try:
+    with open(MOOD_FILE, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+except FileNotFoundError:
+    print(
+        Fore.RED + "Mood history file not found. Creating a new one."
+        + Style.RESET_ALL
+        )
+    data = {}
+except json.JSONDecodeError:
+    print(
+        Fore.RED + "Mood history file is corrupted. Resetting data."
+        + Style.RESET_ALL
+        )
+    data = {}
 
 # To write to the file
 # 'r' is for writing on the json file,
