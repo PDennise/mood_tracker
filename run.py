@@ -68,7 +68,7 @@ note_text = ""
 
 # If user answers "yes", prompt for the note with light white text
 if add_note == "yes":
-    note_text = input(Fore.LIGHTWHITE_EX + "Enter your note: ").strip()
+    note_text = input(Fore.LIGHTWHITE_EX + "Enter your note: \n").strip()
 elif add_note != "no":
     # Raise an error if user input is invalid
     raise ValueError(
