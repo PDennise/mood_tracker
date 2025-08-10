@@ -15,3 +15,13 @@ Simple Python Mood Logging Application
 
 ## 1. Description
 Mood Tracker is a simple Python application that allows users to record their mood along with optional notes and timestamps. Users can view their mood history with color-coded output for easy tracking of emotional patterns.
+
+## 2. Installation
+1 - Make sure you have Python 3.6+ installed.
+2 - Clone the repository:
+    git clone https://github.com/yourusername/mood-tracker.git
+3 - Navigate into the project directory:
+    cd mood-tracker
+4 - Install dependencies using pip:
+    pip install -r requirements.txt
+    ## Note: ## After cloning the repository, run pip install -r requirements.txt to install all necessary dependencies before running the program.
