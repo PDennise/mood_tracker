@@ -78,3 +78,12 @@ try:
 except OSError as e:
     print(Fore.RED + f"Error saving mood data: {e}" + Style.RESET_ALL)
 ------------------------------------------------------------------------------------------
+
+## 6. Deployment
+This project can be deployed easily on platforms like Heroku.
+    Steps include:
+    - Set up a Python environment
+    - Push the project repository to Heroku
+    - Use a requirements.txt file to manage dependencies
+    - Configure Procfile if needed
+    
