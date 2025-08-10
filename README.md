@@ -86,4 +86,22 @@ This project can be deployed easily on platforms like Heroku.
     - Push the project repository to Heroku
     - Use a requirements.txt file to manage dependencies
     - Configure Procfile if needed
-    
+
+## 7. Flowchart
+
+The flowchart illustrates the user interaction flow of the Mood Tracker application:
+
+1. Start Program: The program begins execution.
+2. Mood Selection: The user is prompted to select their current mood from predefined options: Happy, Sad, Angry, Calm, or Anxious.
+3. Add Note Decision: The user is asked whether they want to add a note related to their mood.
+    - If Yes, the user writes a note.
+    - If No, the program skips to saving the mood.
+4. Save Mood: The mood (and note if provided) is saved to a file.
+5. View Mood History Decision: The user is asked if they want to view their past mood entries.
+    - If Yes, the program displays the mood history.
+    - If No, the program ends.
+6. End Program: The program terminates.
+
+This flowchart provides a visual guide to the program's logic and user input handling.
+If you would like to see the image of flowchart:
+![Flowchart](flowchart-mood_tracker.png)
