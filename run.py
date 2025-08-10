@@ -64,12 +64,15 @@ add_note = input(
     "(yes/no): "
     ).strip().lower()
 
+note_text = ""
+
 # If user answers "yes", prompt for the note with light white text
 if add_note == "yes":
     note_text = input(Fore.LIGHTWHITE_EX + "Enter your note: ").strip()
 elif add_note != "no":
     # Raise an error if user input is invalid
-    raise ValueError("Invalid input for note option. Expected 'yes' or 'no'.")
+    raise ValueError(
+        "Invalid input for note option. Expected 'yes' or 'no'.")
 
 # Get the current date and time formatted as a string
 now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
