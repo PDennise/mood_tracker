@@ -54,3 +54,27 @@ Goodbye! Have a nice day!
 - Timestamped mood entries stored in a JSON file
 - Color-coded mood history display
 - Error handling for file operations and invalid inputs
+
+## 5. Error Handling
+- Handles missing or corrupted mood history files by creating/resetting them
+- Validates all user inputs, prompting the user again on invalid responses
+- Catches file write errors and informs the user
+------------------------------------------------------------------------------------------
+# Read mood history from file with error handling
+try:
+    with open(MOOD_FILE, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+except FileNotFoundError:
+    print(Fore.RED + "Mood history file not found. Creating a new one." + Style.RESET_ALL)
+    data = {}
+except json.JSONDecodeError:
+    print(Fore.RED + "Mood history file is corrupted. Resetting data." + Style.RESET_ALL)
+    data = {}
+
+# Save mood data to file with error handling
+try:
+    with open(MOOD_FILE, 'w', encoding='utf-8') as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
+except OSError as e:
+    print(Fore.RED + f"Error saving mood data: {e}" + Style.RESET_ALL)
+------------------------------------------------------------------------------------------
