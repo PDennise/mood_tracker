@@ -25,3 +25,13 @@ Mood Tracker is a simple Python application that allows users to record their mo
 4 - Install dependencies using pip:
     pip install -r requirements.txt
     ## Note: ## After cloning the repository, run pip install -r requirements.txt to install all necessary dependencies before running the program.
+
+## 3. Usage
+Run the program using:
+    python run.py
+
+Follow the prompts to:
+    Enter your current mood (happy, sad, angry, calm, anxius)
+    Optionally add a note
+    View mood history
+    Exit the program
