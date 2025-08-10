@@ -47,3 +47,10 @@ Would you like to see the mood history data? (yes/no): yes
 Note: Feeling great today!
 Would you like to exit the program? (yes/no): yes
 Goodbye! Have a nice day!
+
+## 4. Features
+- Mood input validation with user-friendly prompts
+- Optional note addition for detailed mood tracking
+- Timestamped mood entries stored in a JSON file
+- Color-coded mood history display
+- Error handling for file operations and invalid inputs
