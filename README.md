@@ -35,3 +35,15 @@ Follow the prompts to:
     Optionally add a note
     View mood history
     Exit the program
+
+Example:
+
+How are you feeling? (happy, sad, angry, calm, anxius): happy
+Would you like to add a note? (yes/no): yes
+Enter your note: Feeling great today!
+Logged mood 'happy' at 2025-08-10 15:20:00
+Would you like to see the mood history data? (yes/no): yes
+2025-08-10 15:20:00 - Mood: happy
+Note: Feeling great today!
+Would you like to exit the program? (yes/no): yes
+Goodbye! Have a nice day!
