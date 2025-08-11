@@ -97,7 +97,7 @@ except json.JSONDecodeError:
 ```
 
 
-####Save mood data to file with error handling
+#### Save mood data to file with error handling
 ```python
 try:
     with open(MOOD_FILE, 'w', encoding='utf-8') as file:
