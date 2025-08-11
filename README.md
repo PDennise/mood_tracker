@@ -93,15 +93,19 @@ except FileNotFoundError:
     data = {}
 except json.JSONDecodeError:
     print(Fore.RED + "Mood history file is corrupted. Resetting data." + Style.RESET_ALL)
-    data = {}```
-------------------------------------------------------------------------------------------
+    data = {}
+```
+
+
 ####Save mood data to file with error handling
+```python
 try:
     with open(MOOD_FILE, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
 except OSError as e:
     print(Fore.RED + f"Error saving mood data: {e}" + Style.RESET_ALL)
-------------------------------------------------------------------------------------------
+```
+
 
 ## 6. Deployment
 This project can be deployed easily on platforms like Heroku.
