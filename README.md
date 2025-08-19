@@ -50,25 +50,9 @@ Follow the prompts to:
     
     Exit the program
 
-Example:
-
-How are you feeling? (happy, sad, angry, calm, anxius): happy
-
-Would you like to add a note? (yes/no): yes
-
-Enter your note: Feeling great today!
-
-Logged mood 'happy' at 2025-08-10 15:20:00
-
-Would you like to see the mood history data? (yes/no): yes
-
-2025-08-10 15:20:00 - Mood: happy
-
-Note: Feeling great today!
-
-Would you like to exit the program? (yes/no): yes
-
-Goodbye! Have a nice day!
+![test_1](images/test_1.png)
+![test_2](images/test_2.png)
+![test_3](images/test_3.png)
 
 ## 4. Features
 - Mood input validation with user-friendly prompts
@@ -138,4 +122,4 @@ The flowchart illustrates the user interaction flow of the Mood Tracker applicat
 This flowchart provides a visual guide to the program's logic and user input handling.
 
 If you would like to see the image of flowchart:
-![Flowchart](flowchart-mood_tracker.png)
+![Flowchart](images/flowchart-mood_tracker.pngflowchart-mood_tracker.png)
