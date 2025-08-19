@@ -6,7 +6,7 @@ import datetime
 # Start Colorama
 init(autoreset=True)
 
-moods = {
+MOODS = {
     "happy": (Back.WHITE, Fore.GREEN),
     "sad": (Back.BLUE, Fore.BLACK),
     "angry": (Back.BLACK, Fore.RED),
@@ -91,6 +91,20 @@ def save_data(data):
     with open(MOOD_FILE, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
 
+
+def show_history(data):
+    """
+    Display mood history with colors.
+    """
+    for entry in data.get("history", []):
+        dt = entry.get("datetime", "Unknown date")
+        m = entry.get("mood", "Unknown mood")
+        note = entry.get("note", "")
+        bg, fg = MOODS.get(m, (Back.RESET, Fore.RESET))
+        print(bg + fg + f"{dt} - Mood: {m}" + Style.RESET_ALL)
+        if note:
+            print(Fore.LIGHTWHITE_EX + f"  Note: {note}" + Style.RESET_ALL)
+
 # Get the current date and time formatted as a string
 now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -137,21 +151,7 @@ show_history = input(
 # If the user agrees, iterate through the history list and
 # display each entry with colors
 # Showing date, mood, and note if available
-if show_history == "yes":
-    # Display the mood history list
-    for entry in data.get("history", []):
-        dt = entry.get("datetime", "Unknown date")
-        m = entry.get("mood", "Unknown mood")
-        note = entry.get("note", "")
-        bg, fg = moods.get(m, (Back.RESET, Fore.RESET))
-        print(bg + fg + f"{dt} - Mood: {m}" + Style.RESET_ALL)
-        if note:
-            print(Fore.LIGHTWHITE_EX + f"  Note: {note}" + Style.RESET_ALL)
-elif show_history != "no":
-    # If the user declines, print a confirmation message
-    raise ValueError(
-        "Invalid input for history option. Expected 'yes' or 'no'."
-        )
+            
 
 # Prompt the user to confirm if they want to exit the program
 exit_program = input(
