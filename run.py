@@ -148,6 +148,13 @@ def save_note(data, note_text, mood):
 if "history" not in data:
     data["history"] = []
 
+    # Show confirmation
+    bg, fg = MOODS[mood]
+    # Print a confirmation message with the appropriate colors,
+    # then reset style
+    print(bg + fg + f"Logged mood '{mood}' at {now}" + Style.RESET_ALL)
+
+
 # Get the current date and time in the format YYYY-MM-DD HH:MM:SS
 now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -162,12 +169,6 @@ try:
         json.dump(data, file, ensure_ascii=False, indent=4)
 except OSError as e:
     print(Fore.RED + f"Error saving mood data: {e}" + Style.RESET_ALL)
-
-# Retrieve background and foreground colors for the mood
-bg, fg = moods[mood]
-# Print a confirmation message with the appropriate colors,
-# then reset style
-print(bg + fg + f"Logged mood '{mood}' at {now}" + Style.RESET_ALL)
 
 # After completing mood and note recording
 # Ask the user if they want to view the mood history data
