@@ -36,6 +36,15 @@ def read_file():
         data = {}
     return data
 
+
+def ensure_history(data):
+    """
+    Ensure the data dict has a 'history' key.
+    """
+    if "history" not in data:
+        data["history"] = []
+    return data
+
 # To write to the file
 # 'r' is for writing on the json file,
 # ensure_ascii= is for using ascii characters on json file
