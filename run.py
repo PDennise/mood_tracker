@@ -105,6 +105,27 @@ def show_history(data):
         if note:
             print(Fore.LIGHTWHITE_EX + f"  Note: {note}" + Style.RESET_ALL)
 
+
+def ask_history(data):
+# Ask to show history
+    while True:
+        try:
+            show = input(
+                Fore.MAGENTA + "Would you like to see the mood history? "
+                "(yes/no): "
+                ).strip().lower()
+            if show == "yes":
+                show_history(data)
+                break
+            elif show == "no":
+                return ""
+            else:
+                raise ValueError(
+                    "Invalid input for history option. Expected "
+                    "'yes' or 'no'.")
+        except ValueError as e:
+            print(Fore.RED + str(e) + Style.RESET_ALL)
+
 # Get the current date and time formatted as a string
 now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
