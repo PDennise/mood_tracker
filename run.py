@@ -84,7 +84,13 @@ def enter_note():
                     "Invalid input for note option. Expected 'yes' or 'no'.")
         except ValueError as e:
             print(Fore.RED + str(e) + Style.RESET_ALL)
-        
+
+
+def save_data(data):
+    """Save data dict to JSON file."""
+    with open(MOOD_FILE, 'w', encoding='utf-8') as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
+
 # Get the current date and time formatted as a string
 now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
