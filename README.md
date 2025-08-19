@@ -1,5 +1,7 @@
 **MOOD TRACKER**
 
+![test_1](images/test_1.png)
+
 Simple Python Mood Logging Application
 
 1. Description
@@ -8,8 +10,8 @@ Simple Python Mood Logging Application
 4. Features
 5. Error Handling
 6. Deployment
-7. Contributing
-8. Flowchart
+7. Flowchart
+8. Testing
 
 ---
 
@@ -132,3 +134,14 @@ This flowchart provides a visual guide to the program's logic and user input han
 
 If you would like to see the image of flowchart:
 ![Flowchart](images/flowchart-mood_tracker.png)
+
+## 8. Testing
+
+I have manually tested this project by doing the following:
+
+- Passed the code through a PEP8 linter and confirmed there are no problems
+- Tested in my local terminal and on my Heroku terminal
+
+**Validator Testing**
+- PEP8 
+    No errors were returned from PEP8online.com
