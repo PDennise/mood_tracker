@@ -182,19 +182,27 @@ show_history = input(
 # Showing date, mood, and note if available
             
 
-# Prompt the user to confirm if they want to exit the program
-exit_program = input(
-    Fore.MAGENTA + "Would you like to exit the program? (yes/no): "
-    ).strip().lower()
-
-if exit_program == "yes":
-    # If yes, print a goodbye message in green and terminate the program
-    print(Fore.GREEN + "Goodbye! Have a nice day!" + Style.RESET_ALL)
-    exit()
-elif exit_program != "no":
-    raise ValueError("Invalid input for exit option. Expected 'yes' or 'no'.")
-else:
-    print(Fore.CYAN + "Continuing the program..." + Style.RESET_ALL)
+def quit():
+    """
+    Prompt the user to confirm if they want to exit the program
+    """
+    while True:
+        try:
+            # Ask to exit
+            exit_program = input(
+                Fore.MAGENTA + "Would you like to exit the program? (yes/no): "
+                ).strip().lower()
+            if exit_program == "yes":
+                print(Fore.GREEN + "Goodbye! Have a nice day!" + Style.RESET_ALL)
+                exit()
+            elif exit_program == "no":
+                print(Fore.CYAN + "Continuing the program..." + Style.RESET_ALL)
+                main()
+            else:
+                raise ValueError(
+                    "Invalid input for exit option. Expected 'yes' or 'no'.")
+        except ValueError as e:
+            print(Fore.RED + str(e) + Style.RESET_ALL)
 
 
 def main():
@@ -205,7 +213,7 @@ def main():
     note_text = enter_note()
     ask_history(data)
     save_note(data, note_text, mood)
-
+    quit()
 
 if __name__ == "__main__":
     main()
