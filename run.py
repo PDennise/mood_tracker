@@ -126,15 +126,23 @@ def ask_history(data):
         except ValueError as e:
             print(Fore.RED + str(e) + Style.RESET_ALL)
 
-# Get the current date and time formatted as a string
-now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-# Create a new dictionary entry with the datetime and mood
-entry = {"datetime": now, "mood": mood}
+def save_note(data, note_text, mood):
+    """ 
+    Get the current date and time formatted as a string,
+    Create a new dictionary entry with the datetime and mood,
+    If a note was provided (non-empty), add it to the entry dictionary
+    """
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    entry = {"datetime": now, "mood": mood}
 
-# If a note was provided (non-empty), add it to the entry dictionary
-if note_text:
-    entry["note"] = note_text
+    if note_text:
+        entry["note"] = note_text
+
+    # Append the new entry to the mood history list
+    data["history"].append(entry)
+    save_data(data)
+
 
 # If there is no "history" key in the data, initialize it as an empty list
 if "history" not in data:
@@ -146,8 +154,7 @@ now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 # Create a new entry containing the timestamp and the entered mood
 entry = {"datetime": now, "mood": mood, "note": note_text}
 
-# Append the new entry to the mood history list
-data["history"].append(entry)
+
 
 # Save the updated data back to the JSON file with UTF-8 encoding
 try:
@@ -192,6 +199,11 @@ else:
 def main():
     data = read_file()
     data = ensure_history(data)
+
+    mood = enter_mood()
+    note_text = enter_note()
+    ask_history(data)
+    save_note(data, note_text, mood)
 
 
 if __name__ == "__main__":
