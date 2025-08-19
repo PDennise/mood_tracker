@@ -45,23 +45,25 @@ def ensure_history(data):
         data["history"] = []
     return data
 
+
+def enter_mood():
+    """
+    Prompt user for mood until valid input is given.
+    """
+    while True:
+        mood = input(
+            Fore.CYAN + "How are you feeling? (happy, sad, angry, "
+            "calm, anxius): ").strip().lower()
+        if mood in MOODS:
+            return mood
+        print(Fore.RED + "Invalid mood. Please try again." + Style.RESET_ALL)
+
 # To write to the file
 # 'r' is for writing on the json file,
 # ensure_ascii= is for using ascii characters on json file
 with open(MOOD_FILE, 'w', encoding='utf-8') as file:
     json.dump(data, file, ensure_ascii=False, indent=4)
 
-# Get user input for mood
-# Validate mood input using a loop
-while True:
-    mood = input(
-        Fore.CYAN + "How are you feeling? "
-        "(happy, sad, angry, calm, anxius): "
-        ).strip().lower()
-    if mood in moods:
-        break
-    else:
-        print(Fore.RED + "Invalid mood. Please try again." + Style.RESET_ALL)
 
 # Prompt the user if they want to add a note, input shown in yellow text
 add_note = input(
