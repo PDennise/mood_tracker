@@ -69,25 +69,32 @@ Follow the prompts to:
 #### Read mood history from file with error handling
 
 ```python
-try:
-    with open(MOOD_FILE, 'r', encoding='utf-8') as file:
-        data = json.load(file)
-except FileNotFoundError:
-    print(Fore.RED + "Mood history file not found. Creating a new one." + Style.RESET_ALL)
-    data = {}
-except json.JSONDecodeError:
-    print(Fore.RED + "Mood history file is corrupted. Resetting data." + Style.RESET_ALL)
-    data = {}
+ try:
+        with open(MOOD_FILE, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        data = {}
+    return data
 ```
-
 
 #### Save mood data to file with error handling
 ```python
-try:
-    with open(MOOD_FILE, 'w', encoding='utf-8') as file:
-        json.dump(data, file, ensure_ascii=False, indent=4)
-except OSError as e:
-    print(Fore.RED + f"Error saving mood data: {e}" + Style.RESET_ALL)
+ try:
+            show = input(
+                Fore.MAGENTA + "Would you like to see the mood history? "
+                "(yes/no): "
+                ).strip().lower()
+            if show == "yes":
+                show_history(data)
+                break
+            elif show == "no":
+                return ""
+            else:
+                raise ValueError(
+                    "Invalid input for history option. Expected "
+                    "'yes' or 'no'.")
+        except ValueError as e:
+            print(Fore.RED + str(e) + Style.RESET_ALL)
 ```
 
 
