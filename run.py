@@ -166,3 +166,12 @@ elif exit_program != "no":
     raise ValueError("Invalid input for exit option. Expected 'yes' or 'no'.")
 else:
     print(Fore.CYAN + "Continuing the program..." + Style.RESET_ALL)
+
+
+def main():
+    data = read_file()
+    data = ensure_history(data)
+
+
+if __name__ == "__main__":
+    main()
