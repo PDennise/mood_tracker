@@ -58,7 +58,7 @@ Follow the prompts to:
 - Mood input validation with user-friendly prompts
 - Optional note addition for detailed mood tracking
 - Timestamped mood entries stored in a JSON file
-- Color-coded mood history display
+- Color-coded mood history display (Colorama Library)
 - Error handling for file operations and invalid inputs
 
 ## 5. Error Handling
@@ -124,9 +124,11 @@ The flowchart illustrates the user interaction flow of the Mood Tracker applicat
 5. **View Mood History Decision:** The user is asked if they want to view their past mood entries.
     - If Yes, the program displays the mood history.
     - If No, the program ends.
-6. **End Program:** The program terminates.
+6. **End Program:** The program terminates. 
+    - If Yes, the program continues and asks moods again.
+    - If No, the program ends.
 
 This flowchart provides a visual guide to the program's logic and user input handling.
 
 If you would like to see the image of flowchart:
-![Flowchart](images/flowchart-mood_tracker.pngflowchart-mood_tracker.png)
+![Flowchart](images/flowchart-mood_tracker.png)
