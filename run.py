@@ -58,16 +58,10 @@ def enter_mood():
             return mood
         print(Fore.RED + "Invalid mood. Please try again." + Style.RESET_ALL)
 
-# To write to the file
-# 'r' is for writing on the json file,
-# ensure_ascii= is for using ascii characters on json file
-with open(MOOD_FILE, 'w', encoding='utf-8') as file:
-    json.dump(data, file, ensure_ascii=False, indent=4)
-
 
 def enter_note():
     """
-    Prompt the user if they want to add a note, 
+    Prompt the user if they want to add a note,
     input shown in yellow text
     """
     while True:
@@ -76,7 +70,8 @@ def enter_note():
                 Fore.YELLOW + "Would you like to add a note? "
                 "(yes/no): ").strip().lower()
             if add_note == "yes":
-                return input(Fore.LIGHTWHITE_EX + "Enter your note: \n").strip()
+                return input(
+                    Fore.LIGHTWHITE_EX + "Enter your note: \n").strip()
             elif add_note == "no":
                 return ""
             else:
@@ -87,7 +82,10 @@ def enter_note():
 
 
 def save_data(data):
-    """Save data dict to JSON file."""
+    """
+    Save data dict to JSON file. "w" for writing on the file,
+    encoding is for special characters on json file
+    """
     with open(MOOD_FILE, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
 
@@ -107,7 +105,7 @@ def show_history(data):
 
 
 def ask_history(data):
-# Ask to show history
+    # Ask to show history
     while True:
         try:
             show = input(
@@ -128,7 +126,7 @@ def ask_history(data):
 
 
 def save_note(data, note_text, mood):
-    """ 
+    """
     Get the current date and time formatted as a string,
     Create a new dictionary entry with the datetime and mood,
     If a note was provided (non-empty), add it to the entry dictionary
@@ -143,44 +141,12 @@ def save_note(data, note_text, mood):
     data["history"].append(entry)
     save_data(data)
 
-
-# If there is no "history" key in the data, initialize it as an empty list
-if "history" not in data:
-    data["history"] = []
-
     # Show confirmation
     bg, fg = MOODS[mood]
     # Print a confirmation message with the appropriate colors,
     # then reset style
     print(bg + fg + f"Logged mood '{mood}' at {now}" + Style.RESET_ALL)
 
-
-# Get the current date and time in the format YYYY-MM-DD HH:MM:SS
-now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-# Create a new entry containing the timestamp and the entered mood
-entry = {"datetime": now, "mood": mood, "note": note_text}
-
-
-
-# Save the updated data back to the JSON file with UTF-8 encoding
-try:
-    with open(MOOD_FILE, 'w', encoding='utf-8') as file:
-        json.dump(data, file, ensure_ascii=False, indent=4)
-except OSError as e:
-    print(Fore.RED + f"Error saving mood data: {e}" + Style.RESET_ALL)
-
-# After completing mood and note recording
-# Ask the user if they want to view the mood history data
-show_history = input(
-    Fore.MAGENTA + "Would you like to see the mood history data? "
-    "(yes/no): "
-    ).strip().lower()
-
-# If the user agrees, iterate through the history list and
-# display each entry with colors
-# Showing date, mood, and note if available
-            
 
 def quit():
     """
@@ -193,10 +159,12 @@ def quit():
                 Fore.MAGENTA + "Would you like to exit the program? (yes/no): "
                 ).strip().lower()
             if exit_program == "yes":
-                print(Fore.GREEN + "Goodbye! Have a nice day!" + Style.RESET_ALL)
+                print(
+                    Fore.GREEN + "Goodbye! Have a nice day!" + Style.RESET_ALL)
                 exit()
             elif exit_program == "no":
-                print(Fore.CYAN + "Continuing the program..." + Style.RESET_ALL)
+                print(
+                    Fore.CYAN + "Continuing the program..." + Style.RESET_ALL)
                 main()
             else:
                 raise ValueError(
@@ -214,6 +182,7 @@ def main():
     ask_history(data)
     save_note(data, note_text, mood)
     quit()
+
 
 if __name__ == "__main__":
     main()
