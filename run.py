@@ -98,6 +98,7 @@ def show_history(data):
     history_sorted = sorted(
         data.get("history", []),
         key=lambda x: x.get("datetime", "")
+        reverse=True  # <- Newest entries on top
     )
 
     for entry in history_sorted:
