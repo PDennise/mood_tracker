@@ -11,7 +11,7 @@ MOODS = {
     "sad": (Back.BLUE, Fore.BLACK),
     "angry": (Back.BLACK, Fore.RED),
     "calm": (Back.GREEN, Fore.WHITE),
-    "anxius": (Back.YELLOW, Fore.LIGHTRED_EX)
+    "anxious": (Back.YELLOW, Fore.LIGHTRED_EX)
 }
 
 # Filename of the JSON file used to read and write mood data
@@ -53,7 +53,7 @@ def enter_mood():
     while True:
         mood = input(
             Fore.CYAN + "How are you feeling? (happy, sad, angry, "
-            "calm, anxius): ").strip().lower()
+            "calm, anxious): ").strip().lower()
         if mood in MOODS:
             return mood
         print(Fore.RED + "Invalid mood. Please try again." + Style.RESET_ALL)
