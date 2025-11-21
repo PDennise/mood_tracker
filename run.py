@@ -93,9 +93,14 @@ def save_data(data):
 
 def show_history(data):
     """
-    Display mood history with colors.
+    Display mood history with colors, sorted by datetime ascending.
     """
-    for entry in data.get("history", []):
+    history_sorted = sorted(
+        data.get("history", []),
+        key=lambda x: x.get("datetime", "")
+    )
+
+    for entry in history_sorted:
         dt = entry.get("datetime", "Unknown date")
         m = entry.get("mood", "Unknown mood")
         note = entry.get("note", "")
