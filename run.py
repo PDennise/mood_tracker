@@ -169,7 +169,7 @@ def exit_program():
             elif user_input == "no":
                 print(
                     Fore.CYAN + "Continuing the program..." + Style.RESET_ALL)
-                    return  # Exit the loop and continue program
+                return  # Exit the loop and continue program
 
             else:
                  # Input was invalid, raise an error to be caught below
