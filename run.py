@@ -190,11 +190,19 @@ def main():
     data = read_file()
     data = ensure_history(data)
 
-    mood = enter_mood()
-    note_text = enter_note()
-    ask_history(data)
-    save_note(data, note_text, mood)
-    exit_program()
+    while True:  # Main loop: keeps the program running until user chooses to exit
+        # Ask the user about their current mood
+        mood = enter_mood()
+        # Ask if they want to add a note
+        note_text = enter_note()
+        # Ask if they want to see the mood history
+        ask_history(data)
+        # Save the mood and optional note
+        save_note(data, note_text, mood)
+        # Exit program prompt
+        # If user selects "no", the loop continues (program restarts)
+        # If user selects "yes", sys.exit() terminates the program
+        exit_program()
 
 
 if __name__ == "__main__":
