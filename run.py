@@ -2,6 +2,7 @@ from colorama import init, Fore, Back, Style
 import os   # Operating System
 import json
 import datetime
+import sys
 
 # Start Colorama
 init(autoreset=True)
@@ -148,28 +149,35 @@ def save_note(data, note_text, mood):
     print(bg + fg + f"Logged mood '{mood}' at {now}" + Style.RESET_ALL)
 
 
-def quit():
+def exit_program():
     """
     Prompt the user to confirm if they want to exit the program
     """
     while True:
         try:
             # Ask to exit
-            exit_program = input(
+            user_input = input(
                 Fore.MAGENTA + "Would you like to exit the program? (yes/no): "
                 ).strip().lower()
-            if exit_program == "yes":
+
+            if user_input == "yes":
+                # User chose to exit, print goodbye message and terminate program
                 print(
                     Fore.GREEN + "Goodbye! Have a nice day!" + Style.RESET_ALL)
-                exit()
-            elif exit_program == "no":
+                sys.exit() # Safe exit from the program
+
+            elif user_input == "no":
                 print(
                     Fore.CYAN + "Continuing the program..." + Style.RESET_ALL)
-                main()
+                    return  # Exit the loop and continue program
+
             else:
+                 # Input was invalid, raise an error to be caught below
                 raise ValueError(
                     "Invalid input for exit option. Expected 'yes' or 'no'.")
+
         except ValueError as e:
+            # Print the error message in red if input is invalid
             print(Fore.RED + str(e) + Style.RESET_ALL)
 
 
@@ -181,7 +189,7 @@ def main():
     note_text = enter_note()
     ask_history(data)
     save_note(data, note_text, mood)
-    quit()
+    exit_program()
 
 
 if __name__ == "__main__":
