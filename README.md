@@ -58,20 +58,31 @@ Follow these steps to set up Mood Tracker on your local machine:
 
 ---
 
-## 3. Usage
+## 2. Usage
+
 Run the program using:
 
     python run.py
 
 Follow the prompts to:
 
-    Enter your current mood (happy, sad, angry, calm, anxius)
+   - Enter your current mood:
 
-    Optionally add a note
+        Choose from: happy, sad, angry, calm, anxious.
+
+   - Optionally add a note:
+
+        You can write a short note about your mood to capture context or details.
     
-    View mood history
+   - View mood history:
+
+        The program will ask if you want to see past entries, showing color-coded output.
     
-    Exit the program
+   - Exit the program:
+
+        You can exit at any time. If you choose to continue, the program will loop back to the mood input.
+
+💡 Note: All moods are timestamped and saved in mood-history.json. New entries are appended at the top of the history for easy review.
 
 ![test_1](images/test_1.png)
 ![test_2](images/test_2.png)
