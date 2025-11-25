@@ -92,19 +92,32 @@ Follow the prompts to:
 
 ## 3. Features
 
-- **Mood Input Validation ***
+- **Mood Input Validation**
+
     Only accepts predefined moods (happy, sad, angry, calm, anxious) to ensure accurate data.
+
 - **Optional Note Addition**
+
     Users can add context or details for each mood entry.
-- **Timestamped Entries** 
+
+- **Timestamped Entries**
+
     Each mood is saved with a date and time for accurate tracking.
+
 - **Color-coded Mood History** 
+
     Easily identify mood patterns at a glance with visually distinct colors (using Colorama).
+
 - **Interactive History Display** 
+
     Users can view past entries on demand, with the newest entries shown first.
+
 - **Robust Error Handling** 
+
     Handles missing or corrupted JSON files, invalid inputs, and file write errors gracefully.
+
 - **Safe Program Exit** 
+
     Replaces quit() with exit_program() for controlled termination.
 
 
@@ -117,18 +130,27 @@ Follow the prompts to:
 Mood Tracker includes robust error handling to ensure smooth operation:
 
 - **Missing or Corrupted JSON File**
+
         - If mood-history.json does not exist or is corrupted, the program automatically creates a new, empty file.
+        
         - This prevents crashes and ensures the user can continue logging moods.
 - **Invalid Mood Input**
+
         - Users are prompted until a valid mood is entered.
+
         - Invalid entries (typos, unsupported moods) trigger clear, colored error messages.
 - **Invalid Note Input**
+
         - Only accepts yes or no when asking whether to add a note.
+
         - Prompts again on invalid input, preventing program interruption.
 - **File Write Errors**
+
         - Catches exceptions during saving and informs the user if data cannot be written.
 - **Safe Program Exit**
+
         - Replaces quit() with exit_program() function.
+        
         - Confirms with the user before terminating the program to avoid accidental exits.
 
 
