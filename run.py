@@ -168,7 +168,7 @@ def exit_program():
                 ).strip().lower()
 
             if user_input == "yes":
-                # User chose to exit, 
+                # User chose to exit,
                 # print goodbye message and terminate program
                 print(
                     Fore.GREEN + "Goodbye! Have a nice day!" + Style.RESET_ALL)
@@ -192,8 +192,7 @@ def exit_program():
 def main():
     data = read_file()
     data = ensure_history(data)
-
-    while True:  
+    while True: 
         # Main loop: keeps the program running until user chooses to exit
         # Ask the user about their current mood
         mood = enter_mood()
