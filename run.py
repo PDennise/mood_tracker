@@ -192,7 +192,7 @@ def exit_program():
 def main():
     data = read_file()
     data = ensure_history(data)
-    while True: 
+    while True:
         # Main loop: keeps the program running until user chooses to exit
         # Ask the user about their current mood
         mood = enter_mood()
