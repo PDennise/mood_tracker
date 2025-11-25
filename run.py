@@ -179,7 +179,7 @@ def exit_program():
                 return  # Exit the loop and continue program
 
             else:
-                 # Input was invalid, raise an error to be caught below
+                # Input was invalid, raise an error to be caught below
                 raise ValueError(
                     "Invalid input for exit option. Expected 'yes' or 'no'.")
 
