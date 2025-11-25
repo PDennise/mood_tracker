@@ -10,13 +10,17 @@ The goal of Mood Tracker is not merely to store data, but to create awareness an
 
 By combining intuitive input validation, optional note-taking, and visual feedback through color-coded output, Mood Tracker offers a coherent, interactive experience that encourages mindful self-reflection, rather than just acting as a static log of feelings.
 
-2. Installation
-3. Usage
-4. Features
-5. Error Handling
-6. Deployment
-7. Flowchart
-8. Testing
+## Table of Contents
+1. [Installation](#1-installation)
+2. [Usage](#2-usage)
+3. [Features](#3-features)
+4. [Error Handling](#4-error-handling)
+5. [Deployment](#5-deployment)
+6. [Flowchart](#6-flowchart)
+7. [Testing](#7-testing)
+8. [Bug Fixes](£8-bug-fixes)
+9. [Libraries](#9-libraries)
+10. [Credits](#10-credits)
 
 ---
 
