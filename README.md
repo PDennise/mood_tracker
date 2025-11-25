@@ -1,4 +1,6 @@
-**MOOD TRACKER**
+<div align="center">
+  <h4> MOOD TRACKER </h4>
+</div>
 
 ![test_1](images/test_1.png)
 
