@@ -25,21 +25,38 @@ By combining intuitive input validation, optional note-taking, and visual feedba
 ---
 
 ## 2. Installation
-    1. Make sure you have Python 3.6+ installed.
 
-    2. Clone the repository:
+Follow these steps to set up Mood Tracker on your local machine:
+
+1. Install Python 3.6+
+    
+    Make sure Python 3.6 or higher is installed on your system. You can check with:
+    
+        python3 --version
+
+2. Clone the repository:
 
         git clone https://github.com/yourusername/mood-tracker.git
 
-    3. Navigate into the project directory:
+3. Navigate into the project directory:
 
         cd mood-tracker
+    
+4. Set up a virtual environment (optional but recommended)
 
-    4. Install dependencies using pip:
+        python3 -m venv venv
+        source venv/bin/activate  # Mac/Linux
+        venv\Scripts\activate     # Windows
+
+5. Install dependencies using pip:
 
         pip install -r requirements.txt
 
- Note: After cloning the repository, run pip install -r requirements.txt to install all necessary dependencies before running the program.
+6. Run the program:
+
+        python3 run.py
+
+---
 
 ## 3. Usage
 Run the program using:
