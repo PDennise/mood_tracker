@@ -2,11 +2,14 @@
   <h4> MOOD TRACKER </h4>
 </div>
 
-![test_1](images/test_1.png)
+![starting](/images/starting.png)
 
-Simple Python Mood Logging Application
+[Mood Tracker](https://mood-tracker-bc9acc8bde14.herokuapp.com/) is a simple yet powerful Python application designed to help users record and explore their emotions over time. Instead of just logging moods, it allows users to capture the subtle context of each feeling through optional notes and timestamps. The core feature is a color-coded interactive history, which makes it easy to visually track emotional patterns and identify trends.
 
-1. Description
+The goal of Mood Tracker is not merely to store data, but to create awareness and insight into one’s emotional landscape, turning daily reflections into a meaningful habit. A minimal and clear interface has been maintained, presenting only the necessary prompts and outputs to keep the focus on the moods and notes.
+
+By combining intuitive input validation, optional note-taking, and visual feedback through color-coded output, Mood Tracker offers a coherent, interactive experience that encourages mindful self-reflection, rather than just acting as a static log of feelings.
+
 2. Installation
 3. Usage
 4. Features
@@ -16,11 +19,6 @@ Simple Python Mood Logging Application
 8. Testing
 
 ---
-
-## 1. Description
-Mood Tracker is a simple Python application that allows users to record their mood along with optional notes and timestamps. 
-
-Users can view their mood history with color-coded output for easy tracking of emotional patterns.
 
 ## 2. Installation
     1. Make sure you have Python 3.6+ installed.
