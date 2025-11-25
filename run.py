@@ -53,7 +53,7 @@ def enter_mood():
     """
     while True:
         mood = input(
-            Fore.CYAN + 
+            Fore.CYAN +
             "How are you feeling? (happy, sad, angry, "
             "calm, anxious): ").strip().lower()
         if mood in MOODS:
@@ -192,7 +192,8 @@ def main():
     data = read_file()
     data = ensure_history(data)
 
-    while True:  # Main loop: keeps the program running until user chooses to exit
+    while True:  
+        # Main loop: keeps the program running until user chooses to exit
         # Ask the user about their current mood
         mood = enter_mood()
         # Ask if they want to add a note
