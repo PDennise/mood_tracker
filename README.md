@@ -89,11 +89,24 @@ Follow the prompts to:
 ![test_3](images/test_3.png)
 
 ## 3. Features
-- Mood input validation with user-friendly prompts
-- Optional note addition for detailed mood tracking
-- Timestamped mood entries stored in a JSON file
-- Color-coded mood history display (Colorama Library)
-- Error handling for file operations and invalid inputs
+
+- **Mood Input Validation ***
+    Only accepts predefined moods (happy, sad, angry, calm, anxious) to ensure accurate data.
+- **Optional Note Addition**
+    Users can add context or details for each mood entry.
+- **Timestamped Entries** 
+    Each mood is saved with a date and time for accurate tracking.
+- **Color-coded Mood History** 
+    Easily identify mood patterns at a glance with visually distinct colors (using Colorama).
+- **Interactive History Display** 
+    Users can view past entries on demand, with the newest entries shown first.
+- **Robust Error Handling** 
+    Handles missing or corrupted JSON files, invalid inputs, and file write errors gracefully.
+- **Safe Program Exit** 
+    Replaces quit() with exit_program() for controlled termination.
+
+    
+💡 Note: All features are designed to provide a minimal, focused, and user-friendly experience, keeping the attention on moods and notes rather than extra clutter.
 
 ## 4. Error Handling
 - Handles missing or corrupted mood history files by creating/resetting them
