@@ -168,7 +168,8 @@ def exit_program():
                 ).strip().lower()
 
             if user_input == "yes":
-                # User chose to exit, print goodbye message and terminate program
+                # User chose to exit, 
+                # print goodbye message and terminate program
                 print(
                     Fore.GREEN + "Goodbye! Have a nice day!" + Style.RESET_ALL)
                 sys.exit()  # Safe exit from the program
