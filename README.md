@@ -24,7 +24,7 @@ By combining intuitive input validation, optional note-taking, and visual feedba
 
 ---
 
-## 2. Installation
+## 1. Installation
 
 Follow these steps to set up Mood Tracker on your local machine:
 
@@ -88,14 +88,14 @@ Follow the prompts to:
 ![test_2](images/test_2.png)
 ![test_3](images/test_3.png)
 
-## 4. Features
+## 3. Features
 - Mood input validation with user-friendly prompts
 - Optional note addition for detailed mood tracking
 - Timestamped mood entries stored in a JSON file
 - Color-coded mood history display (Colorama Library)
 - Error handling for file operations and invalid inputs
 
-## 5. Error Handling
+## 4. Error Handling
 - Handles missing or corrupted mood history files by creating/resetting them
 - Validates all user inputs, prompting the user again on invalid responses
 - Catches file write errors and informs the user
@@ -132,7 +132,7 @@ Follow the prompts to:
 ```
 
 
-## 6. Deployment
+## 5. Deployment
 This project can be deployed easily on platforms like Heroku.
 
     Steps include:
@@ -145,7 +145,7 @@ This project can be deployed easily on platforms like Heroku.
 
     - Configure Procfile if needed
 
-## 7. Flowchart
+## 6. Flowchart
 
 The flowchart illustrates the user interaction flow of the Mood Tracker application:
 
@@ -167,7 +167,7 @@ This flowchart provides a visual guide to the program's logic and user input han
 If you would like to see the image of flowchart:
 ![Flowchart](images/flowchart-mood_tracker.png)
 
-## 8. Testing
+## 7. Testing
 
 I have manually tested this project by doing the following:
 
