@@ -53,7 +53,8 @@ def enter_mood():
     """
     while True:
         mood = input(
-            Fore.CYAN + "How are you feeling? (happy, sad, angry, "
+            Fore.CYAN + 
+            "How are you feeling? (happy, sad, angry, "
             "calm, anxious): ").strip().lower()
         if mood in MOODS:
             return mood
