@@ -190,19 +190,26 @@ Example snippets:
                 print(Fore.RED + str(e) + Style.RESET_ALL)
 ```
 
+----
 
 ## 5. Deployment
 This project can be deployed easily on platforms like Heroku.
 
-    Steps include:
+Steps for Heroku deployment:
 
-    - Set up a Python environment
+1. Create a Heroku app:
+    
+    heroku create your-app-name
 
-    - Push the project repository to Heroku
+2. Push the repository to Heroku:
 
-    - Use a requirements.txt file to manage dependencies
+    git push heroku main
 
-    - Configure Procfile if needed
+3. Ensure requirements.txt and Procfile are included for dependencies and entry point.
+
+💡 Note: Once deployed, you can access the live app via https://your-app-name.herokuapp.com/.
+
+----
 
 ## 6. Flowchart
 
@@ -217,9 +224,9 @@ The flowchart illustrates the user interaction flow of the Mood Tracker applicat
 5. **View Mood History Decision:** The user is asked if they want to view their past mood entries.
     - If Yes, the program displays the mood history.
     - If No, the program ends.
-6. **End Program:** The program terminates. 
-    - If Yes, the program continues and asks moods again.
-    - If No, the program ends.
+6. **Repeat or End Program:** The user is asked whether to continue logging moods. 
+    - If Yes, the program loops back to **Mood Selection**.
+    - If No, the program terminates.
 
 This flowchart provides a visual guide to the program's logic and user input handling.
 
