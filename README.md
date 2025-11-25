@@ -88,6 +88,8 @@ Follow the prompts to:
 ![test_2](images/test_2.png)
 ![test_3](images/test_3.png)
 
+----
+
 ## 3. Features
 
 - **Mood Input Validation ***
@@ -105,13 +107,32 @@ Follow the prompts to:
 - **Safe Program Exit** 
     Replaces quit() with exit_program() for controlled termination.
 
-    
+
 💡 Note: All features are designed to provide a minimal, focused, and user-friendly experience, keeping the attention on moods and notes rather than extra clutter.
 
+----
+
 ## 4. Error Handling
-- Handles missing or corrupted mood history files by creating/resetting them
-- Validates all user inputs, prompting the user again on invalid responses
-- Catches file write errors and informs the user
+
+Mood Tracker includes robust error handling to ensure smooth operation:
+
+- **Missing or Corrupted JSON File**
+        - If mood-history.json does not exist or is corrupted, the program automatically creates a new, empty file.
+        - This prevents crashes and ensures the user can continue logging moods.
+- **Invalid Mood Input**
+        - Users are prompted until a valid mood is entered.
+        - Invalid entries (typos, unsupported moods) trigger clear, colored error messages.
+- **Invalid Note Input**
+        - Only accepts yes or no when asking whether to add a note.
+        - Prompts again on invalid input, preventing program interruption.
+- **File Write Errors**
+        - Catches exceptions during saving and informs the user if data cannot be written.
+- **Safe Program Exit**
+        - Replaces quit() with exit_program() function.
+        - Confirms with the user before terminating the program to avoid accidental exits.
+
+
+Example snippets:
 ------------------------------------------------------------------------------------------
 #### Read mood history from file with error handling
 
@@ -126,22 +147,25 @@ Follow the prompts to:
 
 #### Save mood data to file with error handling
 ```python
- try:
-            show = input(
-                Fore.MAGENTA + "Would you like to see the mood history? "
-                "(yes/no): "
-                ).strip().lower()
-            if show == "yes":
-                show_history(data)
-                break
-            elif show == "no":
-                return ""
-            else:
-                raise ValueError(
-                    "Invalid input for history option. Expected "
-                    "'yes' or 'no'.")
-        except ValueError as e:
-            print(Fore.RED + str(e) + Style.RESET_ALL)
+ def ask_history(data):
+    """Prompt user to view mood history with error handling"""
+    while True:
+            try:
+                show = input(
+                    Fore.MAGENTA + "Would you like to see the mood history? "
+                    "(yes/no): "
+                    ).strip().lower()
+                if show == "yes":
+                    show_history(data)
+                    break
+                elif show == "no":
+                    return ""
+                else:
+                    raise ValueError(
+                        "Invalid input for history option. Expected "
+                        "'yes' or 'no'.")
+            except ValueError as e:
+                print(Fore.RED + str(e) + Style.RESET_ALL)
 ```
 
 
