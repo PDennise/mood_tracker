@@ -260,15 +260,29 @@ The application has been manually tested as follows:
     - Screenshots of valid and invalid inputs can be found in the images:
     
     [local test valid yes](/images/terminal-valid-test-yes.png)
+
     [local test valid no](/images/terminal-test-no.png)
+    
     [local test invalid](/images/terminal-test-invalid.png)
-    [pep8 test](/images/pep8-test.png)
-    [pep8 test 2](/images/pep8-test-2.png)
-    [pep8 test 3](/images/pep8-test-3.png)
+
     [heroku valid yes](/images/heroku-valid-yes.png)
+    
     [heroku valid no](/images/heroku-valid-no.png)
+    
     [heroku invalid](/images/heroku-invalid.png)
+
+    PEP8 Test
+    
+    [pep8 test](/images/pep8-test.png)
+    
+    [pep8 test 2](/images/pep8-test-2.png)
+    
+    [pep8 test 3](/images/pep8-test-3.png)
+    
+    Json File
+    
     [no.json](/images/no-json.png)
+    
     [jason file](/images/json-file.png)
 ----
 
@@ -309,7 +323,7 @@ During development, several issues were identified and resolved to improve stabi
     Bug: When mood-history.json was missing or corrupted, the program would crash.
 
     Fix: Added error handling to automatically create or reset the JSON file.
-    
+
 
 6. Input validation feedback
 
