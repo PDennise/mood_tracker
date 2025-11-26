@@ -18,7 +18,7 @@ By combining intuitive input validation, optional note-taking, and visual feedba
 5. [Deployment](#5-deployment)
 6. [Flowchart](#6-flowchart)
 7. [Testing](#7-testing)
-8. [Bug Fixes](£8-bug-fixes)
+8. [Bug Fixes](#8-bug-fixes)
 9. [Libraries](#9-libraries)
 10. [Credits](#10-credits)
 
@@ -331,3 +331,34 @@ During development, several issues were identified and resolved to improve stabi
 
     Fix: Added descriptive error messages and looped prompts using try/except.
 
+---
+
+## 9. Libraries / Dependencies
+
+This project uses a small set of Python libraries to support color-coded terminal output, JSON handling, and program control.
+
+
+**External dependencies:**
+
+| Library      | Purpose                                                                                          |
+| ------------ | ------------------------------------------------------------------------------------------------ |
+| **colorama** | Provides color-coded terminal output for better readability. Install via `pip install colorama`. |
+
+
+**Built-in Python libraries:**
+
+| Library      | Purpose                                                  |
+| ------------ | -------------------------------------------------------- |
+| **json**     | Reads and writes mood entries to `mood-history.json`.    |
+| **datetime** | Generates timestamps for each mood entry.                |
+| **os**       | Handles file existence checks and basic file operations. |
+| **sys**      | Allows safe program exit using `sys.exit()`.             |
+
+
+You can install the required external dependency using:
+
+        pip install -r requirements.txt
+
+The requirements.txt file contains:
+
+        colorama
