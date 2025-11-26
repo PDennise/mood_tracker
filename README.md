@@ -278,37 +278,42 @@ During development, several issues were identified and resolved to improve stabi
 
 1. Incorrect mood spelling
 
-Bug: Mood option "anxius" was misspelled.
+    Bug: Mood option "anxius" was misspelled.
 
-Fix: Corrected to "anxious" in all validation checks.
+    Fix: Corrected to "anxious" in all validation checks.
+
 
 2. Program terminated using quit()
 
-Bug: Using quit() can behave inconsistently and is not recommended in production code.
+    Bug: Using quit() can behave inconsistently and is not recommended in production code.
 
-Fix: Replaced with a custom exit_program() function for a controlled and safe exit.
+    Fix: Replaced with a custom exit_program() function for a controlled and safe exit.
+
 
 3. Mood history order incorrect
 
-Bug: New entries appeared at the bottom of the list.
+    Bug: New entries appeared at the bottom of the list.
 
-Fix: History is now reversed, showing the newest mood at the top.
+    Fix: History is now reversed, showing the newest mood at the top.
+
 
 4. PEP8 style violations
 
-Bug: Long lines, trailing whitespaces, and indentation issues detected via PEP8 linter.
+    Bug: Long lines, trailing whitespaces, and indentation issues detected via PEP8 linter.
 
-Fix: All formatting errors were corrected; code now passes PEP8 validation.
+    Fix: All formatting errors were corrected; code now passes PEP8 validation.
+
 
 5. JSON file handling issues
 
-Bug: When mood-history.json was missing or corrupted, the program would crash.
+    Bug: When mood-history.json was missing or corrupted, the program would crash.
 
-Fix: Added error handling to automatically create or reset the JSON file.
+    Fix: Added error handling to automatically create or reset the JSON file.
+    
 
 6. Input validation feedback
 
-Bug: Invalid mood or history inputs did not show helpful error messages.
+    Bug: Invalid mood or history inputs did not show helpful error messages.
 
-Fix: Added descriptive error messages and looped prompts using try/except.
+    Fix: Added descriptive error messages and looped prompts using try/except.
 
