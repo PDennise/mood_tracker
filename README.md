@@ -84,10 +84,6 @@ Follow the prompts to:
 
 💡 Note: All moods are timestamped and saved in mood-history.json. New entries are appended at the top of the history for easy review.
 
-![test_1](images/test_1.png)
-![test_2](images/test_2.png)
-![test_3](images/test_3.png)
-
 ----
 
 ## 3. Features
@@ -264,6 +260,16 @@ The application has been manually tested as follows:
     - Screenshots of valid and invalid inputs can be found in the images:
     
     [local test valid yes](/images/terminal-valid-test-yes.png)
+    [local test valid no](/images/terminal-test-no.png)
+    [local test invalid](/images/terminal-test-invalid.png)
+    [pep8 test](/images/pep8-test.png)
+    [pep8 test 2](/images/pep8-test-2.png)
+    [pep8 test 3](/images/pep8-test-3.png)
+    [heroku valid yes](/images/heroku-valid-yes.png)
+    [heroku valid no](/images/heroku-valid-no.png)
+    [heroku invalid](/images/heroku-invalid.png)
+    [no.json](/images/no-json.png)
+    [jason file](/images/json-file.png)
 ----
 
 ## 8. Bug Fixes
