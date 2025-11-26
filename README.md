@@ -259,13 +259,15 @@ The application has been manually tested as follows:
     - Deployed to Heroku
     - Ran program in the Heroku terminal
     - Verified that mood input, notes, and history display work as expected
-5. Bug fix summary
-Corrected spelling of anxius → anxious
-Replaced quit() with exit_program() for safer exit
-Reversed mood history display for new entries at the top
-Fixed minor PEP8 issues and formatting
+
+5. Bug fix summary:
+    - Corrected spelling of anxius → anxious
+    - Replaced quit() with exit_program() for safer exit
+    - Reversed mood history display for new entries at the top
+    - Fixed minor PEP8 issues and formatting
+
 6. Screenshots
-Screenshots of valid and invalid inputs can be found in the images/ folder:
+    - Screenshots of valid and invalid inputs can be found in the images/ folder:
 
 
 **Validator Testing**
