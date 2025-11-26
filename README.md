@@ -233,12 +233,40 @@ This flowchart provides a visual guide to the program's logic and user input han
 If you would like to see the image of flowchart:
 ![Flowchart](images/flowchart-mood_tracker.png)
 
+----
+
 ## 7. Testing
 
-I have manually tested this project by doing the following:
+The application has been manually tested as follows:
 
-- Passed the code through a PEP8 linter and confirmed there are no problems
-- Tested in my local terminal and on my Heroku terminal
+1. Terminal tests (local):
+    - Ran the program in the local terminal
+    - Entered valid and invalid moods
+    - Added notes and checked JSON file updates
+    - Verified color-coded output and history display
+
+2. PEP8 compliance:
+    - Ran code through a PEP8 validator
+    - Fixed all warnings (line length, trailing whitespaces, indentation)
+    - Confirmed no remaining style issues
+
+3. JSON file creation:
+    - Deleted mood-history.json
+    - Ran the program
+    - Verified that the file was automatically created and new entries appended correctly
+
+4. Heroku deployment test:
+    - Deployed to Heroku
+    - Ran program in the Heroku terminal
+    - Verified that mood input, notes, and history display work as expected
+5. Bug fix summary
+Corrected spelling of anxius → anxious
+Replaced quit() with exit_program() for safer exit
+Reversed mood history display for new entries at the top
+Fixed minor PEP8 issues and formatting
+6. Screenshots
+Screenshots of valid and invalid inputs can be found in the images/ folder:
+
 
 **Validator Testing**
 - PEP8 
