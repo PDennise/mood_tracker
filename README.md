@@ -261,8 +261,9 @@ The application has been manually tested as follows:
     - Verified that mood input, notes, and history display work as expected
 
 5. Screenshots
-    - Screenshots of valid and invalid inputs can be found in the images/ folder:
-
+    - Screenshots of valid and invalid inputs can be found in the images:
+    
+    [local test valid yes](/images/terminal-valid-test-yes.png)
 ----
 
 ## 8. Bug Fixes
