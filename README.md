@@ -362,3 +362,15 @@ You can install the required external dependency using:
 The requirements.txt file contains:
 
         colorama
+
+---
+
+## 10. Credits
+
+- README structure and formatting inspired by:
+    
+    - [Horizon Photo Repository](https://github.com/Ri-Dearg/horizon-photo/blob/main/README.md)
+    
+    - [Code Institute README Template](https://github.com/Code-Institute-Solutions/readme-template/blob/master/README.md)
+    
+    - Additional support and content assistance provided by **ChatGPT (OpenAI)**.
